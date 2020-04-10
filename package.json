@@ -1,10 +1,10 @@
 {
-  "name": "@grundstein/gss",
+  "name": "@grundstein/grs",
   "version": "0.0.1-alpha.0",
   "author": "Wizards & Witches",
-  "homepage": "https://grundstein.it/gss",
+  "homepage": "https://grundstein.it/grs",
   "license": "AGPL-3.0",
-  "description": "NOT YET BENCHMARKED OR IN PRODUCTION! @grundstein/gss - grundstein static server. serves images, videos and other rich media files via cdn.",
+  "description": "NOT YET BENCHMARKED OR IN PRODUCTION! @grundstein/grs - grundstein redirect service. redirects http to https, serves .well-known for letsencrypt",
   "main": "src/index.mjs",
   "engines": {
     "node": ">=13.5.0"
@@ -17,22 +17,23 @@
     "dev": "src/bin.mjs"
   },
   "bin": {
-    "grundstein-server": "src/bin.mjs",
-    "gs-server": "src/bin.mjs"
+    "grundstein-redirect-service": "src/bin.mjs",
+    "grs": "src/bin.mjs"
   },
   "files": [
     "src"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/grundstein/server.git"
+    "url": "git+https://github.com/grundstein/grs.git"
   },
   "bugs": {
-    "url": "https://github.com/grundstein/server/issues"
+    "url": "https://github.com/grundstein/grs/issues"
   },
   "dependencies": {
+    "@grundstein/commons": "github:grundstein/commons",
     "@grundstein/file-store": "github:grundstein/file-store",
-    "@magic/cli": "0.0.23",
+    "@magic/cli": "0.0.24",
     "@magic/deep": "0.1.2",
     "@magic/fs": "0.0.5",
     "@magic/log": "0.1.4",
@@ -40,8 +41,8 @@
     "@magic/types": "0.1.11"
   },
   "devDependencies": {
-    "@magic/format": "0.0.7",
-    "@magic/test": "0.1.40"
+    "@magic/format": "0.0.8",
+    "@magic/test": "0.1.41"
   },
   "keywords": [
     "grundstein",
