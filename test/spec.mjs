@@ -2,7 +2,7 @@ import { is } from '@magic/test'
 
 import defaultRun, { run } from '../src/index.mjs'
 
-import defaultHandler, { handler} from '../src/handler.mjs'
+import defaultHandler, { handler } from '../src/handler.mjs'
 
 export default [
   { fn: () => run, expect: is.fn, info: 'run is a function' },
