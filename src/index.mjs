@@ -4,14 +4,10 @@ import log from '@magic/log'
 
 import handler from './handler.mjs'
 
-export const run = async (config = {}) => {
+export const run = async (args) => {
   const startTime = log.hrtime()
 
-  const {
-    args = {},
-  } = config
-
-  const { port = 8080, host = '127.0.0.1', dir = 'public' } = args
+  const { port = 5321, host = '127.0.0.1', dir = 'public' } = args
 
   try {
     const server = http.createServer(handler)

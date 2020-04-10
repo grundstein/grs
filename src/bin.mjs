@@ -4,7 +4,7 @@ import cli from '@magic/cli'
 
 import run from './index.mjs'
 
-const args = {
+const opts = {
   options: [
     ['--help', '-help', 'help', '--h', '-h'],
     ['--host', '-h'],
@@ -27,11 +27,11 @@ const args = {
 grs
 
 # serve files using a custom host and port:
-gs-server serve --host grundstein.it --port 80
+grs --host grundstein.it --port 2323
 `,
   },
 }
 
-const res = cli(args)
+const res = cli(opts.args)
 
 run(res)
