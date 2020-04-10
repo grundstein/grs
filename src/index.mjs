@@ -1,6 +1,6 @@
 import http from 'http'
 
-import log from '@magic/log'
+import { log, middleware } from '@grundstein/commons'
 
 import handler from './handler.mjs'
 
@@ -12,16 +12,13 @@ export const run = async (args) => {
   try {
     const server = http.createServer(handler)
 
-    server.on('clientError', (err, socket) => {
-      socket.end('HTTP/1.1 400 Bad Request\r\n\r\n')
-    })
+    const clientError = middleware.clientError({ host, port, startTime })
 
-    server.listen(port, host, () => {
-      log.success('Mainthread started', `pid: ${process.pid}`)
-      log(`server listening to ${host}:${port}`)
+    server.on('clientError', clientError)
 
-      log.timeTaken(startTime, 'startup needed:')
-    })
+    const listener = middleware.listener({ host, port, startTime })
+
+    server.listen(port, host, listener)
   } catch (e) {
     log.error(e)
     process.exit(1)
