@@ -12,7 +12,7 @@ const args = {
   ],
   default: {
     '--host': '127.0.0.1',
-    '--port': 8080,
+    '--port': 5321,
   },
   single: ['--host', '--port'],
   help: {
@@ -20,14 +20,14 @@ const args = {
     header: 'redirects http to https, serves /.well-known for all grundstein hosts.',
     options: {
       '--host': 'internal hostname to listen to, default 127.0.0.1',
-      '--port': 'port, default 8080',
+      '--port': 'port, default 5321',
     },
     example: `
 # simple
 grs
 
 # serve files using a custom host and port:
-gs-server serve --host grundstein.it --port 2323
+gs-server serve --host grundstein.it --port 80
 `,
   },
 }
