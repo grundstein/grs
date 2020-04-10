@@ -4,10 +4,10 @@ import { log, middleware } from '@grundstein/commons'
 
 import handler from './handler.mjs'
 
-export const run = async args => {
+export const run = async (config = {}) => {
   const startTime = log.hrtime()
 
-  const { port = 5321, host = '127.0.0.1', dir = 'public' } = args
+  const { dir = 'public', host = '127.0.0.1', port = 5321 } = config
 
   try {
     const server = http.createServer(handler)
