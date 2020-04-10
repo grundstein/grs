@@ -1,31 +1,28 @@
-## @grundstein/server
+# @grundstein/grs
 
 ### WIP. NOT IN PRODUCTION YET!
 
-serves a local directory (process.cwd() + 'public' is the default)
+## grundstein redirect service
 
-it is recommended to install [@grundstein/cli](https://github.com/grundstein/cli/) instead,
-which includes both this package,
-as well as [@grundstein/builder](https://github.com/grundstein/builder)
-in one cli.
+redirects all http requests to https
 
+serves /.well-known via http,
+for all hosts in [gps](https://github.com/grundstein/gps) host list.
+this is needed for letsencrypt certificates.
 
 #### installation
 ```bash
-npm i @grundstein/server
+npm i @grundstein/grs
 ```
 
 #### usage
 ```bash
 // show full help
-grundstein-server --help
+grs --help
 
 // serve the ./public directory
-grundstein-server
+grs
 
 // serve specific directories
-grundstein-server --dir local/directory/path /global/directory/path
-
-// serve on specific port
-grundstein-server --port 2323
+grs --host grundstein.it --port 2323
 ```
