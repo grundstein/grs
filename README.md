@@ -1,14 +1,19 @@
 # @grundstein/grs
 
-### WIP. NOT IN PRODUCTION YET!
+### WIP. NOT IN PRODUCTION, TESTED AND/OR BENCHMARKED YET!
 
-## grundstein redirect service
+## grs: grundstein redirection service
+
+### features:
+
+#### https redirection
 
 redirects all http requests to https
 
+#### letsencrypt certificates
+
 serves /.well-known via http,
 for all hosts in [gps](https://github.com/grundstein/gps) host list.
-this is needed for letsencrypt certificates.
 
 #### installation
 ```bash
@@ -23,6 +28,6 @@ grs --help
 // serve the ./public directory
 grs
 
-// serve specific directories
+// serve on specific host and port
 grs --host grundstein.it --port 2323
 ```
