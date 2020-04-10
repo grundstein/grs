@@ -7,13 +7,11 @@ import is from '@magic/types'
 import { lib } from '@grundstein/commons'
 const { formatLog, getFileEncoding, getRandomId, respond, sendFile } = lib
 
-const getHostName = r => r.hostname || r.headers["x-forwarded-host"] || r.headers.host || ""
+const getHostName = r => r.hostname || r.headers['x-forwarded-host'] || r.headers.host || ''
 
 export const handler = async (req, res) => {
   // assign random id to make this call traceable in logs.
   req.id = await getRandomId()
-
-  req.headers['x-forwarded-for'] = req.id
 
   const startTime = log.hrtime()
 
@@ -29,7 +27,7 @@ export const handler = async (req, res) => {
   const host = getHostName(req)
 
   res.writeHead(302, {
-    'Location': `https://${host}${req.url}`,
+    Location: `https://${host}${req.url}`,
   })
 
   res.end()
