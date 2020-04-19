@@ -15,16 +15,10 @@ export const handler = async (req, res) => {
 
   const startTime = log.hrtime()
 
-  const parsedUrl = URL.parse(req.url)
-
-  if (parsedUrl.pathname.startsWith('/.well-known')) {
-    respond(res, { body: 'ohai', code: 200 })
-
-    formatLog(req, res, startTime, 200)
-    return
+  let host = getHostName(req)
+  if (host.includes(':')) {
+    host = host.split(':')[0]
   }
-
-  const host = getHostName(req)
 
   res.writeHead(302, {
     Location: `https://${host}${req.url}`,
