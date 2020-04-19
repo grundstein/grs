@@ -23,7 +23,7 @@ const opts = {
       '--port': 'port, default 8080',
     },
     example: `
-# simple
+# simple, listen to 0.0.0.0:8080 and redirect all requests to https://hostname
 grs
 
 # serve files using a custom host and port:
