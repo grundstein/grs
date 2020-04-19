@@ -7,7 +7,7 @@ import handler from './handler.mjs'
 export const run = async (config = {}) => {
   const startTime = log.hrtime()
 
-  const { dir = 'public', host = '127.0.0.1', port = 5321 } = config
+  const { host = '0.0.0.0', port = 8080 } = config
 
   try {
     const server = http.createServer(handler)

@@ -11,16 +11,16 @@ const opts = {
     ['--port', '-p'],
   ],
   default: {
-    '--host': '127.0.0.1',
-    '--port': 5321,
+    '--host': '0.0.0.0',
+    '--port': 8080,
   },
   single: ['--host', '--port'],
   help: {
     name: 'grundstein redirect service',
-    header: 'redirects http to https, serves /.well-known for all grundstein hosts.',
+    header: 'redirects http to https.',
     options: {
-      '--host': 'internal hostname to listen to, default 127.0.0.1',
-      '--port': 'port, default 5321',
+      '--host': 'internal hostname to listen to, default 0.0.0.0 - all interfaces',
+      '--port': 'port, default 8080',
     },
     example: `
 # simple
