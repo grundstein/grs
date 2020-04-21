@@ -1,13 +1,16 @@
 import URL from 'url'
 
 import mimes from '@magic/mime-types'
-import log from '@magic/log'
-import is from '@magic/types'
 
-import { lib } from '@grundstein/commons'
-const { formatLog, getFileEncoding, getRandomId, respond, sendFile } = lib
-
-const getHostName = r => r.hostname || r.headers['x-forwarded-host'] || r.headers.host || ''
+import { log, is } from '@grundstein/commons'
+import {
+  formatLog,
+  getFileEncoding,
+  getHostname,
+  getRandomId,
+  respond,
+  sendFile,
+} from '@grundstein/commons/lib.mjs'
 
 export const handler = async (req, res) => {
   // assign random id to make this call traceable in logs.
