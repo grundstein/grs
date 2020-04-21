@@ -3,6 +3,7 @@ import URL from 'url'
 import mimes from '@magic/mime-types'
 
 import { log, is } from '@grundstein/commons'
+
 import {
   formatLog,
   getFileEncoding,
@@ -18,13 +19,10 @@ export const handler = async (req, res) => {
 
   const startTime = log.hrtime()
 
-  let host = getHostName(req)
-  if (host.includes(':')) {
-    host = host.split(':')[0]
-  }
+  const hostname = getHostname(req)
 
   res.writeHead(302, {
-    Location: `https://${host}${req.url}`,
+    Location: `https://${hostname}${req.url}`,
   })
 
   res.end()
