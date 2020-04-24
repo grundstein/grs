@@ -1,16 +1,11 @@
 import URL from 'url'
 
-import mimes from '@magic/mime-types'
-
-import { log, is } from '@grundstein/commons'
+import { log } from '@grundstein/commons'
 
 import {
   formatLog,
-  getFileEncoding,
   getHostname,
   getRandomId,
-  respond,
-  sendFile,
 } from '@grundstein/commons/lib.mjs'
 
 export const handler = async (req, res) => {
