@@ -19,8 +19,8 @@ const opts = {
     name: 'grundstein redirect service',
     header: 'redirects http to https.',
     options: {
-      '--host': 'internal hostname to listen to, default 0.0.0.0 - all interfaces',
-      '--port': 'port, default 8080',
+      '--host': 'internal hostname to listen to',
+      '--port': 'port',
     },
     example: `
 # simple, listen to 0.0.0.0:8080 and redirect all requests to https://hostname
