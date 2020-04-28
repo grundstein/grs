@@ -2,11 +2,7 @@ import URL from 'url'
 
 import { log } from '@grundstein/commons'
 
-import {
-  formatLog,
-  getHostname,
-  getRandomId,
-} from '@grundstein/commons/lib.mjs'
+import { formatLog, getHostname, getRandomId } from '@grundstein/commons/lib.mjs'
 
 export const handler = async (req, res) => {
   // assign random id to make this call traceable in logs.
