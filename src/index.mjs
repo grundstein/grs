@@ -1,22 +1,14 @@
-import http from 'http'
+import { log } from '@grundstein/commons'
 
-import { log, middleware } from '@grundstein/commons'
+import { createServer } from '@grundstein/commons/lib.mjs'
 
 import handler from './handler.mjs'
 
 export const run = async (config = {}) => {
-  const startTime = log.hrtime()
-
-  const { host = '0.0.0.0', port = 8080 } = config
+  config.startTime = log.hrtime()
 
   try {
-    const server = http.createServer(handler)
-
-    const clientError = middleware.clientError({ host, port, startTime })
-    server.on('clientError', clientError)
-
-    const listener = middleware.listener({ host, port, startTime })
-    server.listen(port, host, listener)
+    await createServer(config, handler)
   } catch (e) {
     log.error(e)
     process.exit(1)
