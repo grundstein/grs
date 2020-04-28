@@ -14,7 +14,12 @@ export const handler = async (req, res) => {
 
   const startTime = log.hrtime()
 
-  const hostname = getHostname(req)
+  let hostname = getHostname(req)
+
+  // strip www from the domain
+  if (hostname.startsWith('www.')) {
+    hostname = hostname.replace('www.', '')
+  }
 
   res.writeHead(302, {
     Location: `https://${hostname}${req.url}`,
