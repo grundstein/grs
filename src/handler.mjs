@@ -1,8 +1,6 @@
-import URL from 'url'
-
 import { log } from '@grundstein/commons'
 
-import { enhanceRequest, formatLog, getHostname, getRandomId } from '@grundstein/commons/lib.mjs'
+import { enhanceRequest, formatLog, getHostname } from '@grundstein/commons/lib.mjs'
 
 export const handler = (req, res) => {
   const startTime = log.hrtime()
