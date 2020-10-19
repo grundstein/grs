@@ -6,8 +6,7 @@ import run from './index.mjs'
 
 const opts = {
   options: [
-    ['--help', '-help', 'help', '--h', '-h'],
-    ['--host', '-h'],
+    ['--host', '--ip', '-H'],
     ['--port', '-p'],
   ],
   default: {
@@ -26,7 +25,9 @@ const opts = {
 # simple, listen to 0.0.0.0:8080 and redirect all requests to https://hostname
 grs
 
-# serve files using a custom host and port:
+# redirect from grundstein.it:2323 to https://grundstein.it
+# also redirects from www.grundstein.it:2323 to https://grundstein.it
+# this services expects another service to run on port 80!
 grs --host grundstein.it --port 2323
 `,
   },
