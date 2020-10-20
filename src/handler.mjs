@@ -3,7 +3,7 @@ import { log } from '@grundstein/commons'
 import { enhanceRequest, formatLog, getHostname } from '@grundstein/commons/lib.mjs'
 
 export const handler = (req, res) => {
-  const startTime = log.hrtime()
+  const time = log.hrtime()
 
   req = enhanceRequest(req)
 
@@ -20,7 +20,7 @@ export const handler = (req, res) => {
 
   res.end()
 
-  formatLog(req, res, startTime, 302)
+  formatLog(req, res, { time, type: '302' })
 }
 
 export default handler
