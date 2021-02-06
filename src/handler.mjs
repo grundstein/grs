@@ -1,8 +1,18 @@
 import { log } from '@grundstein/commons'
 
-import { enhanceRequest, formatLog, getHostname } from '@grundstein/commons/lib.mjs'
+import { enhanceRequest, formatLog, getHostname, respond } from '@grundstein/commons/lib.mjs'
 
 export const handler = (req, res) => {
+  if (!req.url.startsWith('/') || req.url.includes('://')) {
+    respond(req, res, {
+      body: '418 - I am a Teapot',
+      code: 418,
+      type: 'teapot-response',
+    })
+
+    return
+  }
+
   const time = log.hrtime()
 
   req = enhanceRequest(req)
