@@ -7,7 +7,8 @@ export const handler = (req, res) => {
     respond(req, res, {
       body: '418 - I am a Teapot',
       code: 418,
-      type: 'teapot-response',
+      type: 'tea',
+      getFullIp: true,
     })
 
     return
