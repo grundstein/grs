@@ -4,12 +4,14 @@ import { enhanceRequest, formatLog, getHostname, respond } from '@grundstein/com
 
 export const handler = (req, res) => {
   if (!req.url.startsWith('/') || req.url.includes('://')) {
-    respond(req, res, {
-      body: '418 - I am a Teapot',
-      code: 418,
-      type: 'tea',
-      getFullIp: true,
-    })
+    req.socket.destroy()
+
+    // respond(req, res, {
+    //   body: '418 - I am a Teapot',
+    //   code: 418,
+    //   type: 'tea',
+    //   getFullIp: true,
+    // })
 
     return
   }
