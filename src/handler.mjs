@@ -1,26 +1,9 @@
-import { log } from '@grundstein/commons'
-
-import { enhanceRequest, formatLog, getHostname, respond } from '@grundstein/commons/lib.mjs'
+import { lib } from '@grundstein/commons'
 
 export const handler = (req, res) => {
-  if (!req.url.startsWith('/') || req.url.includes('://')) {
-    req.socket.destroy()
+  req = lib.enhanceRequest(req)
 
-    // respond(req, res, {
-    //   body: '418 - I am a Teapot',
-    //   code: 418,
-    //   type: 'tea',
-    //   getFullIp: true,
-    // })
-
-    return
-  }
-
-  const time = log.hrtime()
-
-  req = enhanceRequest(req)
-
-  let hostname = getHostname(req)
+  let hostname = lib.getHostname(req)
 
   // strip www from the domain
   if (hostname.startsWith('www.')) {
