@@ -31,12 +31,11 @@
     "url": "https://github.com/grundstein/grs/issues"
   },
   "dependencies": {
-    "@grundstein/commons": "github:grundstein/commons",
-    "@grundstein/file-store": "github:grundstein/file-store"
+    "@grundstein/commons": "0.0.1"
   },
   "devDependencies": {
-    "@magic/format": "0.0.23",
-    "@magic/test": "0.1.69"
+    "@magic/format": "0.0.29",
+    "@magic/test": "0.1.74"
   },
   "keywords": [
     "grundstein",
