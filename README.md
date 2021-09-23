@@ -1,8 +1,10 @@
-# @grundstein/grs
+## @grundstein/grs
 
-### WIP. NOT IN PRODUCTION, TESTED AND/OR BENCHMARKED YET!
+**g**rundstein **r**edirection **s**ervice
 
-## grs: grundstein redirection service
+listens to all incoming http requests and upgrades them to https.
+
+### WIP. NOT FULLY AUTOMATED, TESTED AND BENCHMARKED YET!
 
 ### features:
 
@@ -10,10 +12,8 @@
 
 redirects all http requests to https
 
-#### letsencrypt certificates
-
-serves /.well-known via http,
-for all hosts in [gps](https://github.com/grundstein/gps) host list.
+#### www. removal
+redirects www.domain.name to domain.name
 
 #### installation
 ```bash
@@ -22,12 +22,12 @@ npm i @grundstein/grs
 
 #### usage
 ```bash
-// show full help
+# show full help
 grs --help
 
-// serve the ./public directory
+# listen to port 8080 and redirect all incoming requests.
 grs
 
-// serve on specific host and port
+# serve on specific host and port
 grs --host grundstein.it --port 2323
 ```
