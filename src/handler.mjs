@@ -1,6 +1,8 @@
-import { lib } from '@grundstein/commons'
+import { lib, log } from '@grundstein/commons'
 
 export const handler = (req, res) => {
+  const time = log.hrtime()
+
   req = lib.enhanceRequest(req)
 
   let hostname = lib.getHostname(req)
@@ -16,7 +18,7 @@ export const handler = (req, res) => {
 
   res.end()
 
-  formatLog(req, res, { time, type: '302' })
+  log.server.request(req, res, { time, type: 'http redirect' })
 }
 
 export default handler
