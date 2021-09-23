@@ -31,3 +31,8 @@ grs
 # serve on specific host and port
 grs --host grundstein.it --port 2323
 ```
+
+#### changelog
+
+##### 0.0.1
+first release
