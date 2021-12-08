@@ -34,5 +34,12 @@ grs --host grundstein.it --port 2323
 
 #### changelog
 
-##### 0.0.1
+##### v0.0.1
 first release
+
+##### v0.0.2
+update dependencies
+
+##### v0.0.3 - unreleased
+...
+
