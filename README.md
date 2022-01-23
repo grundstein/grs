@@ -43,6 +43,9 @@ update dependencies
 ##### v0.0.3
 update dependencies
 
-##### v0.0.4 - unreleased
+##### v0.0.4
+update dependencies
+
+##### v0.0.5 - unreleased
 ...
 
