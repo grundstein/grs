@@ -16,7 +16,7 @@ const opts = {
   single: ['--host', '--port'],
   help: {
     name: 'grundstein redirect service',
-    header: 'redirects http to https.',
+    header: 'redirects http to https and www.domain.com to domain.com.',
     options: {
       '--host': 'internal hostname to listen to',
       '--port': 'port',
@@ -25,8 +25,7 @@ const opts = {
 # simple, listen to 0.0.0.0:8080 and redirect all requests to https://hostname
 grs
 
-# redirect from grundstein.it:2323 to https://grundstein.it
-# also redirects from www.grundstein.it:2323 to https://grundstein.it
+# redirects from http://www.grundstein.it:2323 to https://grundstein.it
 # this services expects another service to run on port 80!
 grs --host grundstein.it --port 2323
 `,
