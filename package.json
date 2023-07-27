@@ -1,7 +1,7 @@
 {
   "name": "@grundstein/grs",
   "version": "0.0.5",
-  "author": "Wizards & Witches",
+  "author": "SystemKollektiv",
   "homepage": "https://grundstein.it/grs",
   "license": "AGPL-3.0",
   "description": "NOT YET BENCHMARKED OR IN PRODUCTION! @grundstein/grs - grundstein redirect service. redirects http to https, serves .well-known for letsencrypt",
@@ -47,6 +47,10 @@
     {
       "name": "jascha ehrenreich",
       "github": "jaeh"
+    },
+    {
+      "name": "litto",
+      "github": "mslitto"
     }
   ]
 }
