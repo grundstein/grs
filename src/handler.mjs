@@ -1,24 +1,24 @@
-import { lib, log } from '@grundstein/commons'
+import { lib } from '@grundstein/commons'
 
 export const handler = (req, res) => {
-  const time = log.hrtime()
-
-  req = lib.enhanceRequest(req)
-
+  /*
+   * lib.getHostname supports http1 and http2
+   */
   let hostname = lib.getHostname(req)
 
   // strip www from the domain
   if (hostname.startsWith('www.')) {
-    hostname = hostname.replace('www.', '')
+    hostname = hostname.slice(4)
   }
 
-  res.writeHead(302, {
+  const head = {
+    // [HTTP2_HEADER_STATUS]: 302,
     Location: `https://${hostname}${req.url}`,
-  })
+  }
+
+  res.writeHead(302, head)
 
   res.end()
-
-  log.server.request(req, res, { time, type: 'http redirect' })
 }
 
 export default handler
