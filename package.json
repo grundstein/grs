@@ -31,7 +31,7 @@
     "url": "https://github.com/grundstein/grs/issues"
   },
   "dependencies": {
-    "@grundstein/commons": "0.0.10"
+    "@grundstein/commons": "github:grundstein/commons"
   },
   "devDependencies": {
     "@magic/format": "0.0.51",
