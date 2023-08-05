@@ -13,14 +13,17 @@ listens to all incoming http requests and upgrades them to https.
 redirects all http requests to https
 
 #### www. removal
+
 redirects www.domain.name to domain.name
 
 #### installation
+
 ```bash
 npm i @grundstein/grs
 ```
 
 #### usage
+
 ```bash
 # show full help
 grs --help
@@ -35,23 +38,29 @@ grs --host grundstein.it --port 2323
 #### changelog
 
 ##### v0.0.1
+
 first release
 
 ##### v0.0.2
+
 update dependencies
 
 ##### v0.0.3
+
 update dependencies
 
 ##### v0.0.4
+
 update dependencies
 
 ##### v0.0.5
+
 update dependencies
 
 ##### v0.0.6
+
 update dependencies
 
 ##### v0.0.7 - unreleased
-...
 
+...

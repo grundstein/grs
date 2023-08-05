@@ -12,7 +12,9 @@ export const run = async (config = {}) => {
     server.listen(config.port, () => {
       const currentDate = lib.getCurrentDate()
 
-      log(`{"type": "info", "date": "${currentDate.date}", "time": "${currentDate.time}", "msg": "grs server started" }`)
+      log(
+        `{"type": "info", "date": "${currentDate.date}", "time": "${currentDate.time}", "msg": "grs server started" }`,
+      )
     })
   } catch (e) {
     log.error(e)
