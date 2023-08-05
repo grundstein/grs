@@ -26,8 +26,11 @@ const opts = {
 grs
 
 # redirects from http://www.grundstein.it:2323 to https://grundstein.it
-# this services expects another service to run on port 80!
+# this service expects another service to run on port 80 or an iptable rule that redirects port 80 to it's port!
 grs --host grundstein.it --port 2323
+
+# run using port 80
+sudo grs --host grundstein.it --port 80
 `,
   },
 }
