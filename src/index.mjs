@@ -9,6 +9,7 @@ export const run = async (config = {}) => {
 
   try {
     const server = http.createServer(handler)
+
     server.listen(config.port, () => {
       const currentDate = lib.getCurrentDate()
 
